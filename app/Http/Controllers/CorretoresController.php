@@ -17,43 +17,42 @@ class CorretoresController extends Controller
     }
 
     public function enviarCadastro(Request $request)
-{
-    //Aqui contem mensagens de sucesso/erro ao executar uma ação
-    $mensagens = [
-        'nome.required' => 'O campo Nome é obrigatório.',
-        'nome.max' => 'Nome inválido.',
-        'nome.string' => 'O campo Nome deve ser apenas letras.',
-        'cpf.required' => 'O campo CPF é obrigatório.',
-        'cpf.digits' => 'O campo CPF deve conter 11 dígitos e somente números.',
-        'cpf' => 'CPF inválido, coloque somente números e um CPF válido.',
-        'creci.required' => 'O campo CRECI é obrigatório.',
-        'creci.regex' => 'O campo CRECI deve ter 5 números seguidos por 2 letras.'
-    ];
-
-    //Método de Validação do Eloquent
-    $request->validate([
-        'nome' => 'required|max:255|string',
-        'cpf' => [
-            'required',
-            'digits:11',
-            function ($attribute, $value, $fail) {
-                if (!$this->validarCPF($value)) {
-                    $fail('CPF inválido, coloque somente números e um CPF válido.');
-                }
-            },
-        ],
-        'creci' => 'required|regex:/^\d{5}[a-zA-Z]{2}$/',
-    ], $mensagens);
-
-    Corretores::cadastrar([
-        'nome' => $request->nome,
-        'cpf' => $request->cpf,
-        'creci' => $request->creci
-    ]);
-
-    //Redirecionando e mostrando status de resposta
-    return redirect('corretores/cadastrar')->with('status', 'Corretor Cadastrado!');
-}
+    {
+        $mensagens = [
+            'nome.required' => 'O campo Nome é obrigatório.',
+            'nome.min' => 'O campo Nome deve ter pelo menos :min caracteres.',
+            'nome.max' => 'Nome inválido.',
+            'nome.string' => 'O campo Nome deve ser apenas letras.',
+            'cpf.required' => 'O campo CPF é obrigatório.',
+            'cpf.digits' => 'O campo CPF deve conter 11 dígitos e somente números.',
+            'cpf' => 'CPF inválido, coloque somente números e um CPF válido.',
+            'creci.required' => 'O campo CRECI é obrigatório.',
+            'creci.min' => 'O campo CRECI deve ter pelo menos :min caracteres.'
+        ];
+    
+        $request->validate([
+            'nome' => 'required|min:2|max:255|string',
+            'cpf' => [
+                'required',
+                'digits:11',
+                function ($attribute, $value, $fail) {
+                    if (!$this->validarCPF($value)) {
+                        $fail('CPF inválido, coloque somente números e um CPF válido.');
+                    }
+                },
+            ],
+            'creci' => 'required|min:2',
+        ], $mensagens);
+    
+        Corretores::cadastrar([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'creci' => $request->creci
+        ]);
+    
+        return redirect('corretores/cadastrar')->with('status', 'Corretor Cadastrado!');
+    }
+    
 
 // Função editar cadastro
 public function editar(int $id){
@@ -69,27 +68,28 @@ public function atualizarDados(Request $request, int $id){
     //Aqui contem mensagens de sucesso/erro ao executar uma ação
     $mensagens = [
         'nome.required' => 'O campo Nome é obrigatório.',
+        'nome.min' => 'O campo Nome deve ter pelo menos :min caracteres.',
         'nome.max' => 'Nome inválido.',
         'nome.string' => 'O campo Nome deve ser apenas letras.',
         'cpf.required' => 'O campo CPF é obrigatório.',
-        'cpf.digits' => 'O campo CPF deve conter 11 dígitos somente.',
+        'cpf.digits' => 'O campo CPF deve conter 11 dígitos e somente números.',
         'cpf' => 'CPF inválido, coloque somente números e um CPF válido.',
         'creci.required' => 'O campo CRECI é obrigatório.',
-        'creci.regex' => 'O campo CRECI deve ter 5 números seguidos por 2 letras.'
+        'creci.min' => 'O campo CRECI deve ter pelo menos :min caracteres.'
     ];
 
     $request->validate([
-        'nome' => 'required|max:255|string',
+        'nome' => 'required|min:2|max:255|string',
         'cpf' => [
             'required',
             'digits:11',
             function ($attribute, $value, $fail) {
                 if (!$this->validarCPF($value)) {
-                    $fail('CPF inválido ,coloque somente números e um CPF válido.');
+                    $fail('CPF inválido, coloque somente números e um CPF válido.');
                 }
             },
         ],
-        'creci' => 'required|regex:/^\d{5}[a-zA-Z]{2}$/',
+        'creci' => 'required|min:2',
     ], $mensagens);
 
     Corretores::findOrFail($id)->atualizarDados([
@@ -97,6 +97,7 @@ public function atualizarDados(Request $request, int $id){
         'cpf' => $request->cpf,
         'creci' => $request->creci
     ]);
+
 
     //Redirecionando e mostrando status de resposta
     return redirect()->back()->with('status', 'Dados Atualizados Com Sucesso!');
