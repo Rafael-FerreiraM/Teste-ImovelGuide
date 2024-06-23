@@ -32,7 +32,7 @@ A verificação de CPF feita com uma função pronta chamada "módulo 11" só pe
 ## Rotas do projeto:
 - corretores/cadastro ---> Index do projeto e função de cadastrar e visualizar corretores.
 - corretores/editar/id  ---> Edita dados dos corretores.
-- corretores/excluir/id ---> Exclui pelo Postman, jSON, XML ou diretamente na URL.
+- corretores/excluir/id ---> Exclui corretor do sistema.
   
 
 # Imagem do Projeto
