@@ -143,7 +143,6 @@
 
                         <form action="{{ url('corretores/'.$corretor->id.'/editar') }}" method="POST" style="display:inline;">
                           @csrf
-                          @method('DELETE')
                           <a 
                           href="{{ url('corretores/'.$corretor->id.'/deletar') }}" 
                           class="btn btn-delete action-btn" 
