@@ -22,9 +22,8 @@ A verificação de CPF feita com uma função pronta chamada "módulo 11" só pe
 - Execute o comando git clone https://github.com/Rafael-FerreiraM/Teste-ImovelGuide.git para clonar o repositório em sua máquina.
 - Navegue até o diretório do projeto no terminal.
 - Execute composer install para instalar as dependências do Laravel.
-- Configure o arquivo .env com as informações do seu ambiente, como banco de dados, URL, etc.
-- Certifique-se de ter o PHP e o MySQL instalados em seu sistema.
-- Inicie o servidor MySQL de acordo com a sua instalação (pode variar dependendo do sistema operacional).
+- Execute esse comando para configurar o arquivo .env: cp .env.example .env
+- Execute esse comando para gerar a key de acesso: php artisan key:generate
 - No terminal, execute php artisan migrate para criar as tabelas necessárias no banco de dados.
 - Inicie o servidor Laravel com o comando php artisan serve
 - Abra um navegador e acesse localhost:8000/corretores/cadastro para visualizar o projeto em execução.
