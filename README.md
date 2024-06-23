@@ -1,5 +1,5 @@
 ## Teste Processo Seletivo da Empresa Imóvel Guide
-## Leia essa documentação para garantir que não haja problemas ao testar 
+## Leia essa documentação caso ocorra algum problema técnico
 
 ![image](https://github.com/Rafael-FerreiraM/Teste-ImovelGuide/assets/101290871/3cf5d465-be51-4412-ba5a-73cb480ed71b)
 
@@ -13,9 +13,11 @@ Esse projeto foi feito como parte de um processo seletivo utilizando:
 
 
 ## Observações
-O projeto criará 3 tabelas, 1 é a tabela "corretores" a pedido do teste, as 2 outras tabelas são criadas pelo propio Laravel que podem ser excluidas, pois não interferem no projeto.
+O projeto criará 3 tabelas, 1 é a tabela "corretores" a pedido do teste, as 2 outras tabelas são criadas pelo próprio Laravel que podem ser excluidas, pois não interferem no projeto.
 
 A verificação de CPF feita com uma função pronta chamada "módulo 11" só permite CPF reais para cadastrar corretores.
+
+A página index do projeto está localizada na rota corretores/cadastro, portanto você deve acessar essa rota primeiro.
 
 ## Como utilizar o projeto:
 
@@ -30,9 +32,9 @@ A verificação de CPF feita com uma função pronta chamada "módulo 11" só pe
 - Abra um navegador e acesse localhost:8000/corretores/cadastro para visualizar o projeto em execução.
   
 ## Rotas do projeto:
-- corretores/cadastro ---> Index do projeto e função de cadastrar e visualizar corretores.
-- corretores/editar/id  ---> Edita dados dos corretores.
-- corretores/excluir/id ---> Exclui corretor do sistema.
+- corretores/cadastro ---> Index do projeto e rota para cadastrar e visualizar corretores.
+- corretores/editar/id  ---> Rota para editar dados dos corretores.
+- corretores/excluir/id ---> Rota para excluir corretores do sistema.
   
 
 # Imagem do Projeto
