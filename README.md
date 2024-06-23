@@ -1,5 +1,8 @@
 ## Teste Processo Seletivo da Empresa Imovel Guide
 
+![image](https://github.com/Rafael-FerreiraM/Teste-ImovelGuide/assets/101290871/3cf5d465-be51-4412-ba5a-73cb480ed71b)
+
+
 Esse projeto foi feito como parte de um processo seletivo utilizando:
 
 - Laravel 10
