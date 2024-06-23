@@ -1,4 +1,4 @@
-## Teste Processo Seletivo da Empresa Imovel Guide
+## Teste Processo Seletivo da Empresa Imóvel Guide
 
 ![image](https://github.com/Rafael-FerreiraM/Teste-ImovelGuide/assets/101290871/3cf5d465-be51-4412-ba5a-73cb480ed71b)
 
@@ -9,7 +9,7 @@ Esse projeto foi feito como parte de um processo seletivo utilizando:
 - PHP 8.1
 - Bootstrap
 - MySQL
-- JavaScript
+
 
 ## Observações
 O projeto criará 3 tabelas, 1 é a tabela "corretores" a pedido do teste, as 2 outras tabelas são criadas pelo propio Laravel que podem ser excluidas, pois não interferem no projeto.
