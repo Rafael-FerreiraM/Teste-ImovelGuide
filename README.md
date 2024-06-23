@@ -22,14 +22,14 @@ A verificação de CPF feita com uma função pronta chamada "módulo 11" só pe
 - Configure o arquivo .env com as informações do seu ambiente, como banco de dados, URL, etc.
 - Certifique-se de ter o PHP e o MySQL instalados em seu sistema.
 - Inicie o servidor MySQL de acordo com a sua instalação (pode variar dependendo do sistema operacional).
+- - No terminal, execute php artisan migrate para criar as tabelas necessárias no banco de dados.
 - Inicie o servidor Laravel com o comando php artisan serve
-- No terminal, execute php artisan migrate para criar as tabelas necessárias no banco de dados.
-- Abra um navegador e acesse http://localhost/corretores/cadastro para visualizar o projeto em execução.
+- Abra um navegador e acesse localhost:8000/corretores/cadastro para visualizar o projeto em execução.
   
 ## Rotas do projeto:
-- corretores/cadastro ---> index do projeto e cadastrar corretores
-- corretores/editar/id  ----> editar dados dos corretores
-- corretores/excluir/id ---> excluir diretamente pelo postman ou json
+- corretores/cadastro ---> Index do projeto e função de cadastrar e visualizar corretores.
+- corretores/editar/id  ---> Edita dados dos corretores.
+- corretores/excluir/id ---> Exclui pelo Postman, jSON, XML ou diretamente na URL.
   
 
 # Imagem do Projeto
@@ -37,4 +37,7 @@ A verificação de CPF feita com uma função pronta chamada "módulo 11" só pe
 
 
 # Agradecimentos
-Gostaria de agradecer a empresa Imovel Guide, por ter me dado a chance de participar nesse processo seletivo e realizar esse desafio que agrega muito na minha experiência como profissional, muito obrigado mesmo !.
+Gostaria de agradecer a empresa Imovel Guide, por ter me dado a chance de participar nesse processo seletivo e realizar esse desafio que agrega muito na minha experiência como profissional, muito obrigado mesmo ! .
+![image](https://github.com/Rafael-FerreiraM/Teste-ImovelGuide/assets/101290871/2833fcbf-c846-4dab-8f41-37e9c28430ab)
+
+
