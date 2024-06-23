@@ -1,4 +1,5 @@
 ## Teste Processo Seletivo da Empresa Imóvel Guide
+## Leia essa documentação para garantir que não haja problemas ao testar 
 
 ![image](https://github.com/Rafael-FerreiraM/Teste-ImovelGuide/assets/101290871/3cf5d465-be51-4412-ba5a-73cb480ed71b)
 
